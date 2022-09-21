@@ -51,11 +51,14 @@ jobs:
         # Add commands to this `run` step to execute a snyk test with the following criteria:
         # - fail only on vulns where a fix (upgrade) is available
         # - fail only for high or critical severity vulns
-      
-        - snyk/scan:
-            fail-on-issues: false
-            severity-threshold: high
-            token-variable: SNYK_TOKEN
+      - run:
+          name: Snyk Test
+          command: |
+            snyk version
+            - snyk/scan:
+                fail-on-issues: false
+                severity-threshold: high
+                token-variable: SNYK_TOKEN
  
 workflows:
   tsm-bootcamp:
