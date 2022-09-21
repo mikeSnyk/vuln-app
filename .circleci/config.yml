@@ -1,5 +1,6 @@
 version: 2.1
-
+orbs: 
+  snyk: snyk/snyk@1.2.3
 jobs:
   build:
     docker:
@@ -54,7 +55,7 @@ jobs:
       - run:
           name: Snyk Test
           command: |
-            snyk/snyk@1.2.3
+            
             - snyk/scan:
                 fail-on-issues: false
                 severity-threshold: high
