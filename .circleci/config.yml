@@ -54,8 +54,7 @@ jobs:
         # - fail only for high or critical severity vulns
       - run:
           name: Snyk Test
-          command: |
-            
+          command: 
             - snyk/scan:
                 fail-on-issues: false
                 severity-threshold: high
