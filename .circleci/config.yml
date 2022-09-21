@@ -55,10 +55,8 @@ jobs:
       - run:
           name: Snyk Test
           command: |
-            - snyk/scan:
-                fail-on-issues: false
-                severity-threshold: high
-                token-variable: SNYK_TOKEN
+            snyk auth $SNYK_TOKEN
+            snyk test
  
 workflows:
   tsm-bootcamp:
