@@ -54,7 +54,7 @@ jobs:
       - run:
           name: Snyk Test
           command: |
-            snyk version
+            snyk/snyk@1.2.3
             - snyk/scan:
                 fail-on-issues: false
                 severity-threshold: high
