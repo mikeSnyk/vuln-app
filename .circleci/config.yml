@@ -56,7 +56,7 @@ jobs:
           name: Snyk Test
           command: |
             snyk auth $SNYK_TOKEN
-            snyk test
+            snyk test --fail-fast
 workflows:
   tsm-bootcamp:
     jobs:
