@@ -56,7 +56,7 @@ jobs:
           name: Snyk Test
           command: |
             snyk auth $SNYK_TOKEN
-            snyk test --fail-fast --severity-threshold=high
+            snyk test --fail-fast --severity-threshold=critical
 workflows:
   tsm-bootcamp:
     jobs:
