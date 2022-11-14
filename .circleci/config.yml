@@ -59,7 +59,7 @@ jobs:
             snyk monitor --fail-fast --severity-threshold=critical --fail-on-issue=false
             snyk test --fail-fast --severity-threshold=critical --fail-on-issue=false
 workflows:
-  tsm-bootcamp:
+  example-workflow:
     jobs:
       - build
       - snyk_scan:
