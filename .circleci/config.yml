@@ -36,8 +36,8 @@ jobs:
           name: Snyk Test 
           command: |
             snyk auth $SNYK_TOKEN
-            snyk monitor --severity-threshold=critical --fail-on-issue=false
-            snyk test --severity-threshold=critical --fail-on-issue=false
+            snyk monitor 
+            snyk test --severity-threshold=critical --fail-on=patchable
 workflows:
   example-workflow:
     jobs:
