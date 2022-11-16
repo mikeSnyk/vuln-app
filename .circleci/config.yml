@@ -22,9 +22,7 @@ jobs:
       - image: cimg/node:15.1
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
+      
 
       - run:
           name: Snyk Setup
