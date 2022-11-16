@@ -33,7 +33,7 @@ jobs:
             chmod +x ./snyk
             sudo mv ./snyk /usr/local/bin/snyk
       - run:
-          name: Snyk Test
+          name: Snyk Test 
           command: |
             snyk auth $SNYK_TOKEN
             snyk monitor --fail-fast --severity-threshold=critical --fail-on-issue=false
