@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
   build:
     docker:
@@ -51,16 +50,17 @@ jobs:
         # Add commands to this `run` step to execute a snyk test with the following criteria:
         # - fail only on vulns where a fix (upgrade) is available
         # - fail only for high or critical severity vulns
-      
-        - snyk/scan:
-            fail-on-issues: false
-            severity-threshold: high
-            token-variable: SNYK_TOKEN
- 
+      - run:
+          name: Snyk Test
+          command: |
+            snyk auth $SNYK_TOKEN
+            snyk monitor --fail-fast --severity-threshold=critical --fail-on-issue=false
+            snyk test --fail-fast --severity-threshold=critical --fail-on-issue=false
 workflows:
-  tsm-bootcamp:
+  example-workflow:
     jobs:
       - build
       - snyk_scan:
           requires:
             - build
+
